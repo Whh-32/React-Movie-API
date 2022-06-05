@@ -1,0 +1,21 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    padding: 20px;
+    background-color: blueviolet;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.button {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 8px;
+    border: none;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 14px;
+}

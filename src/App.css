@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: customFont;
+}
+
+@font-face {
+    font-family: customFont;
+    src: url(../public/fonts/URWDIN-Medium.ttf);
+}
+
+body {
+    background-color: #f1e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f3f3f3;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(201, 201, 201);
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
