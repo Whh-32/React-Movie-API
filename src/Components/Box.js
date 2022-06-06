@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect, useCallback } from 'react'
 import classes from './Box.module.css'
 import Contain from './Contain'
+import Inputs from './Inputs';
 
 const Box = () => {
     const [move, setMove] = useState([]);
@@ -11,7 +12,7 @@ const Box = () => {
         try {
             setLoading(true)
             setError(null)
-            const response = await fetch('https://swapi.dev/api/films');
+            const response = await fetch('https://react-api-b452e-default-rtdb.firebaseio.com');
             if (!response.ok) {
                 throw new Error('something went wrong!')
             }
@@ -36,8 +37,11 @@ const Box = () => {
         feachDataHandler()
     }, [feachDataHandler])
 
+
+
     return (
         <Fragment>
+            <Inputs />
             <div className={classes.box}>
                 <button onClick={feachDataHandler} className={classes.button}>feach data</button>
             </div>
