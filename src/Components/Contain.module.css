@@ -7,10 +7,10 @@
     width: 650px;
     min-height: 100px;
     padding: 20px;
-    background-color: blueviolet;
+    background-color: rgb(255, 255, 255);
     margin-top: 20px;
 }
 
 .contain>span {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }

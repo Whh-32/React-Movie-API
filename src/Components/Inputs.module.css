@@ -7,7 +7,7 @@
     width: 650px;
     min-height: 100px;
     padding: 20px;
-    background-color: blueviolet;
+    background-color: rgb(255, 255, 255);
     margin-top: 20px;
 }
 
@@ -17,7 +17,7 @@ label {
 
 input {
     outline: none;
-    border: none;
+    border: 1px solid rgb(255, 187, 0);
     width: 100%;
     height: 30px;
     border-radius: 8px;
@@ -30,8 +30,20 @@ textarea {
     height: 200px;
     resize: none;
     outline: none;
-    border: none;
+    border: 1px solid rgb(255, 187, 0);
     border-radius: 8px;
     padding: 10px;
     font-size: 14px;
+}
+
+button {
+    width: 80px;
+    height: 35px;
+    background-color: rgb(19, 19, 19);
+    border-radius: 8px;
+    border: none;
+    color: aliceblue;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
 }

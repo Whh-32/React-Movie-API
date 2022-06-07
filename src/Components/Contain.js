@@ -6,12 +6,12 @@ const Contain = (props) => {
     return (
         <Fragment>
             <div className={classes.contain}>
-                {!props.loadstate && props.data.length > 0 && props.data.map(move => (
+                {!props.loadstate && props.data.length > 0 && props.data.map(movie => (
                     <Moves
-                        key={move.id}
-                        id={move.id}
-                        title={move.title}
-                        description={move.description}
+                        key={movie.id}
+                        id={movie.id}
+                        title={movie.title}
+                        description={movie.description}
                     />
                 ))}
                 {!props.loadstate && !props.error && props.data.length === 0 && <span>not found moves.</span>}

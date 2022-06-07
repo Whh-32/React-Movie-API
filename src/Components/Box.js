@@ -4,7 +4,7 @@ import Contain from './Contain'
 import Inputs from './Inputs';
 
 const Box = () => {
-    const [move, setMove] = useState([]);
+    const [movie, setMovie] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
@@ -12,22 +12,24 @@ const Box = () => {
         try {
             setLoading(true)
             setError(null)
-            const response = await fetch('https://react-api-b452e-default-rtdb.firebaseio.com');
+            const response = await fetch('https://react-api-b452e-default-rtdb.firebaseio.com/data.json');
             if (!response.ok) {
                 throw new Error('something went wrong!')
             }
             const data = await response.json();
-            const moves = data.results.map(move => {
-                return {
-                    id: move.episode_id,
-                    title: move.title,
-                    description: move.opening_crawl
-                }
-            })
-            setMove(moves)
+
+            const movies = []
+            for (const key in data) {
+                movies.push({
+                    id: key,
+                    title: data[key].title,
+                    description: data[key].description
+                })
+            }
+
+            setMovie(movies)
         } catch (error) {
             setError(error.message)
-            console.log(error.message)
         }
         setLoading(false)
 
@@ -38,14 +40,25 @@ const Box = () => {
     }, [feachDataHandler])
 
 
+    async function addMovie(movie) {
+        const respons = await fetch('https://react-api-b452e-default-rtdb.firebaseio.com/data.json', {
+            method: "POSt",
+            body: JSON.stringify(movie),
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+        const data = respons.json()
+        console.log(data)
+    }
 
     return (
         <Fragment>
-            <Inputs />
+            <Inputs onAdd={addMovie} />
             <div className={classes.box}>
-                <button onClick={feachDataHandler} className={classes.button}>feach data</button>
+                <button onClick={feachDataHandler} className={classes.button}>Feach Data</button>
             </div>
-            <Contain data={move} loadstate={loading} error={error} />
+            <Contain data={movie} loadstate={loading} error={error} />
         </Fragment>
 
     )
