@@ -14,7 +14,8 @@ const Box = () => {
             setError(null)
             const response = await fetch('https://react-api-b452e-default-rtdb.firebaseio.com/data.json');
             if (!response.ok) {
-                throw new Error('something went wrong!')
+                const message = 'something went wrong!'
+                throw new Error(message)
             }
             const data = await response.json();
 
@@ -26,8 +27,8 @@ const Box = () => {
                     description: data[key].description
                 })
             }
+            setMovie(movies);
 
-            setMovie(movies)
         } catch (error) {
             setError(error.message)
         }
