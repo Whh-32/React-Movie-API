@@ -10,6 +10,15 @@
     src: url(../public/fonts/URWDIN-Medium.ttf);
 }
 
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 body {
     background-color: #000000;
     display: flex;

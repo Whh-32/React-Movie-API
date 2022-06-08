@@ -5,7 +5,7 @@ import Box from "./Components/Box";
 
 function App() {
   return (
-    <Box />
+      <Box />
   );
 }
 

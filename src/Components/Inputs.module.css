@@ -4,11 +4,12 @@
     justify-content: center;
     flex-flow: column;
     border-radius: 15px;
-    width: 650px;
+    width: 50%;
     min-height: 100px;
     padding: 20px;
     background-color: rgb(255, 255, 255);
     margin-top: 20px;
+    transition: all 500ms;
 }
 
 label {
@@ -46,4 +47,11 @@ button {
     font-size: 12px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .inputs {
+        width: 90%;
+    }
+    
 }

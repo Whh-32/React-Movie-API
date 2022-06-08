@@ -4,13 +4,38 @@
     justify-content: center;
     flex-flow: column;
     border-radius: 15px;
-    width: 650px;
+    width: 50%;
     min-height: 100px;
     padding: 20px;
     background-color: rgb(255, 255, 255);
     margin-top: 20px;
+    transition: all 500ms;
 }
 
 .contain>span {
     color: rgb(0, 0, 0);
+}
+
+.img {
+    position: relative;
+    width: 90px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.img>img {
+    width: 350px;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+    .contain {
+        width: 90%;
+    }
+    
 }
