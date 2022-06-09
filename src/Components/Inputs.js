@@ -23,8 +23,8 @@ const Inputs = (props) => {
       description: description.current.value
     }
     props.onAdd(movie);
-    title.current.value = '';
-    description.current.value = '';
+    title.current.value = "";
+    description.current.value = "";
   }
 
   return (
